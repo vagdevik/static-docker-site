@@ -1,1 +1,1 @@
-"Dockerised static website"
+"Dockerised Static Website"
