@@ -1,0 +1,20 @@
+# set generic language
+language: generic
+
+# Tell travis we need Docker
+services:
+  - docker
+
+# Tell travis how to deploy project to AWS
+deploy:
+  provider: elasticbeanstalk
+  region: us-west-2 
+  app: "my-welcome-site" # Copy it from elasctic beanstalk dashboard
+  env: "MyWelcomeSite-env" # Copy it from elasctic beanstalk dashboard
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
+  bucket_name: "bucket-for-welcome-site"
+  bucket_path: "docker"
+  on:
+    branch: main
+
