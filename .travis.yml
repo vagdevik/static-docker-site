@@ -13,7 +13,7 @@ deploy:
   env: "MyWelcomeSite-env" # Copy it from elasctic beanstalk dashboard
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: $AWS_SECRET_KEY
-  bucket_name: "bucket-for-welcome-site"
+  bucket_name: "bucket-for-static-site-code"
   bucket_path: "docker"
   on:
     branch: main
