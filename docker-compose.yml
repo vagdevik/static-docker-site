@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+
+  welcome:
+    # enable terminal for the container
+    tty: true
+
+    build:
+      # We are defining the custom Dockerfile
+      context: .
+      dockerfile: Dockerfile
+      # Map local machine's 8000 port to container's port 3000
+      # nginx runs on port 80 by default
+    ports:
+        - "8080:80"
+
+    volumes:
+        - ./html:/usr/share/nginx/html/
